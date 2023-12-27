@@ -1,0 +1,11 @@
+/.venv
+
+__pycache__/
+
+note.txt
+
+.idea/FastAPI first project.iml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
