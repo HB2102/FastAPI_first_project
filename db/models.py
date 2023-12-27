@@ -20,3 +20,22 @@ class Post(Base):
     timestamp = Column(DateTime)
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship('User', back_populates='items')
+    comments = relationship('Comment', back_populates='post')
+
+
+
+class Comment(Base):
+    __tablename__ = 'comment'
+    id = Column(Integer, index=True, primary_key=True)
+    text = Column(String)
+    user_id = Column(Integer, ForeignKey('user.id'))
+    post_id = Column(Integer, ForeignKey('post.id'))
+    timestamp = Column(DateTime)
+    user = relationship("User")
+    post = relationship("Post", back_populates='comments')
+
+
+
+
+
+
